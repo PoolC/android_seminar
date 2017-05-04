@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(layout);
 
-        adapter.add(new Lecture("자료구조", "안형찬"));
-        adapter.add(new Lecture("윤리학", "김형철"));
-        adapter.add(new Lecture("논리학", "최동호"));
+        adapter.add(new Todo("자료구조 과제", false));
+        adapter.add(new Todo("윤리학 쪽글", false));
+        adapter.add(new Todo("논리학 연습문제", true));
     }
 }
