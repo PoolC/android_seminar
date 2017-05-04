@@ -1,10 +1,10 @@
 package kr.pe.cumul.androidseminar;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,10 +14,14 @@ public class MainActivity extends AppCompatActivity {
 
         LinearLayout layout = new LinearLayout(this);
 
-        ListView listView = new ListView(this);
-        ListAdapter adapter = new ListAdapter(this);
-        listView.setAdapter(adapter);
-        layout.addView(listView);
+        RecyclerView recyclerView = new RecyclerView(this);
+        layout.addView(recyclerView);
+
+        RecyclerAdapter adapter = new RecyclerAdapter(this);
+        recyclerView.setAdapter(adapter);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
 
         setContentView(layout);
 
